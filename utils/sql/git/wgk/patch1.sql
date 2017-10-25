@@ -12,23 +12,23 @@ UPDATE `spawnentry` SET `chance`='40' WHERE `spawngroupID`='4567' AND `npcID`='3
 INSERT INTO `spawnentry` (`spawngroupID`, `npcID`, `chance`) VALUES (4567, 32028, 60);
 
 # Delete Fabled mobs
-DELETE spawn2 FROM spawn2 
-join spawnentry on spawnentry.spawngroupID=spawn2.spawngroupID 
-join spawngroup on spawnentry.`spawngroupID`=spawngroup.`id` 
+DELETE spawnentry FROM spawnentry
+join spawn2 on spawn2.`spawngroupID`=spawnentry.`spawngroupID`
+join spawngroup on spawnentry.`spawngroupID`=spawngroup.`id`
 join npc_types on spawnentry.`npcID`=npc_types.`id`
 where npc_types.`name` like '%fabled%'
 
 # Delete A Dark Vision from griegsend
-DELETE spawn2 FROM spawn2 
-join spawnentry on spawnentry.spawngroupID=spawn2.spawngroupID 
-join spawngroup on spawnentry.`spawngroupID`=spawngroup.`id` 
+DELETE spawnentry FROM spawnentry
+join spawn2 on spawn2.`spawngroupID`=spawnentry.`spawngroupID`
+join spawngroup on spawnentry.`spawngroupID`=spawngroup.`id`
 join npc_types on spawnentry.`npcID`=npc_types.`id`
 where npc_types.`name` like '%vision%' and zone='griegsend'
 
 # Delete A Dark Sending from griegsend
-DELETE spawn2 FROM spawn2 
-join spawnentry on spawnentry.spawngroupID=spawn2.spawngroupID 
-join spawngroup on spawnentry.`spawngroupID`=spawngroup.`id` 
+DELETE spawnentry FROM spawnentry
+join spawn2 on spawn2.`spawngroupID`=spawnentry.`spawngroupID`
+join spawngroup on spawnentry.`spawngroupID`=spawngroup.`id`
 join npc_types on spawnentry.`npcID`=npc_types.`id`
 where npc_types.`name` like '%sending%' and zone='griegsend'
 
